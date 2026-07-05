@@ -1,0 +1,313 @@
+/* ==========================================================================
+   ficha.css — página de anomalia individual (anomalia.html)
+   Enciclopédia Anomaliarum
+   ========================================================================== */
+
+/* ---------- Breadcrumb ---------- */
+.ficha-breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+  font-family: var(--font-mono);
+  font-size: var(--fs-000);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  color: var(--paper-on-void-faded);
+  padding-block: var(--sp-5);
+}
+
+.ficha-breadcrumb a {
+  color: var(--paper-on-void-faded);
+}
+
+.ficha-breadcrumb a:hover,
+.ficha-breadcrumb a:focus-visible {
+  color: var(--red-stamp-bright);
+}
+
+.ficha-breadcrumb__atual {
+  color: var(--paper-on-void);
+}
+
+/* ---------- Cabeçalho / crachá ---------- */
+.ficha-cracha {
+  display: grid;
+  grid-template-columns: 14rem 1fr;
+  gap: 0;
+  background: var(--bg-paper);
+  color: var(--ink);
+  position: relative;
+  border: 1px solid var(--line-hairline-paper);
+}
+
+.ficha-cracha::before {
+  content: "";
+  position: absolute;
+  inset: 8px;
+  border: 1px dashed var(--line-hairline-paper);
+  pointer-events: none;
+}
+
+.ficha-cracha__foto {
+  aspect-ratio: 3 / 4;
+  background: var(--bg-paper-hatch);
+  border-right: 1px solid var(--line-hairline-paper);
+  overflow: hidden;
+  position: relative;
+}
+
+.ficha-cracha__foto img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(0.55) contrast(1.08);
+}
+
+.ficha-cracha__corpo {
+  padding: var(--sp-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-4);
+  min-width: 0;
+}
+
+.ficha-cracha__topo {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: var(--sp-4);
+  flex-wrap: wrap;
+}
+
+.ficha-cracha__id {
+  font-family: var(--font-mono);
+  font-size: var(--fs-00);
+  letter-spacing: var(--tracking-wide);
+  color: var(--ink-faded);
+}
+
+.ficha-cracha__nome {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4.5vw, var(--fs-4));
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-tight);
+  line-height: var(--lh-tight);
+}
+
+.ficha-cracha__titulo {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: var(--fs-1);
+  color: var(--ink-faded);
+}
+
+.ficha-cracha__selos {
+  display: flex;
+  gap: var(--sp-2);
+  flex-wrap: wrap;
+}
+
+.ficha-cracha__status {
+  margin-top: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: var(--sp-4);
+  padding-top: var(--sp-4);
+  border-top: 1px dashed var(--line-hairline-paper);
+  flex-wrap: wrap;
+}
+
+.ficha-cracha__status-item {
+  font-family: var(--font-mono);
+  font-size: var(--fs-000);
+  color: var(--ink-faded);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+}
+
+.ficha-cracha__status-item strong {
+  display: block;
+  font-family: var(--font-serif);
+  font-style: normal;
+  font-size: var(--fs-0);
+  text-transform: none;
+  color: var(--ink);
+  letter-spacing: normal;
+}
+
+.ficha-cracha .barcode {
+  color: var(--ink);
+}
+
+/* ---------- Grid de informações (biográfico / físico) ---------- */
+.ficha-info-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--sp-5);
+}
+
+.ficha-painel {
+  background: var(--bg-void-raised);
+  border: 1px solid var(--line-hairline-void);
+  padding: var(--sp-5);
+}
+
+.ficha-painel__titulo {
+  font-family: var(--font-mono);
+  font-size: var(--fs-000);
+  letter-spacing: var(--tracking-widest);
+  text-transform: uppercase;
+  color: var(--red-stamp-bright);
+  margin-bottom: var(--sp-4);
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+}
+
+.ficha-painel__titulo::before {
+  content: "";
+  width: 1.25rem;
+  height: 1px;
+  background: currentColor;
+}
+
+.ficha-campo {
+  display: grid;
+  grid-template-columns: 7rem 1fr;
+  gap: var(--sp-3);
+  padding-block: var(--sp-2);
+  border-bottom: 1px dashed var(--line-hairline-void);
+  font-size: var(--fs-00);
+}
+
+.ficha-campo:last-child {
+  border-bottom: none;
+}
+
+.ficha-campo__rotulo {
+  font-family: var(--font-mono);
+  font-size: var(--fs-000);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wide);
+  color: var(--paper-on-void-faded);
+}
+
+.ficha-campo__valor {
+  font-family: var(--font-serif);
+  color: var(--paper-on-void);
+}
+
+.ficha-descricao {
+  font-family: var(--font-serif);
+  font-size: var(--fs-1);
+  line-height: var(--lh-loose);
+  color: var(--paper-on-void);
+  padding-top: var(--sp-2);
+}
+
+/* ---------- Atributos (hexágonos) ---------- */
+.ficha-atributos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-6);
+  align-items: center;
+  justify-content: space-around;
+  padding: var(--sp-6) var(--sp-5);
+}
+
+.ficha-atributos__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--sp-3);
+}
+
+.hex--grande {
+  --hex-size: 92px;
+}
+
+.hex--grande .hex__value {
+  font-size: var(--fs-3);
+}
+
+/* Barras de atributo, visíveis sempre — leitura precisa ao lado do hexágono decorativo */
+.ficha-atributos__barras {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-3);
+  flex: 1;
+  min-width: 16rem;
+}
+
+/* ---------- Bloco de notas ---------- */
+.ficha-notas {
+  background: var(--bg-void-raised);
+  border-left: 3px solid var(--red-stamp);
+  border-top: 1px solid var(--line-hairline-void);
+  border-right: 1px solid var(--line-hairline-void);
+  border-bottom: 1px solid var(--line-hairline-void);
+  padding: var(--sp-5);
+}
+
+.ficha-notas__titulo {
+  font-family: var(--font-mono);
+  font-size: var(--fs-000);
+  letter-spacing: var(--tracking-widest);
+  text-transform: uppercase;
+  color: var(--red-stamp-bright);
+  margin-bottom: var(--sp-3);
+}
+
+.ficha-notas__texto {
+  font-family: var(--font-mono);
+  font-size: var(--fs-00);
+  line-height: var(--lh-loose);
+  color: var(--paper-on-void-faded);
+  white-space: pre-line;
+}
+
+/* ---------- Seções da ficha ---------- */
+.ficha-secao {
+  padding-block: var(--sp-6);
+}
+
+.ficha-secao + .ficha-secao {
+  border-top: 1px solid var(--line-hairline-void);
+}
+
+/* ---------- Estado de carregamento / erro ---------- */
+.ficha-estado {
+  padding: var(--sp-8) var(--sp-6);
+  border: 1px dashed var(--line-hairline-void);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+  align-items: flex-start;
+}
+
+/* ---------- Responsivo ---------- */
+@media (max-width: 56rem) {
+  .ficha-cracha {
+    grid-template-columns: 1fr;
+  }
+  .ficha-cracha__foto {
+    aspect-ratio: 16 / 9;
+    border-right: none;
+    border-bottom: 1px solid var(--line-hairline-paper);
+  }
+  .ficha-info-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 40rem) {
+  .ficha-atributos {
+    justify-content: center;
+    gap: var(--sp-5);
+  }
+  .ficha-campo {
+    grid-template-columns: 1fr;
+    gap: var(--sp-1);
+  }
+}

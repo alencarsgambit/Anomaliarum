@@ -1,0 +1,103 @@
+/* ==========================================================================
+   variables.css — design tokens
+   Enciclopédia Anomaliarum
+
+   Direção visual: arquivo confidencial de uma instituição de contenção
+   pós-soviética — sala de arquivo escura, pastas de papel envelhecido,
+   carimbos de tinta vermelha, máquina de escrever, fichas datilografadas.
+   ========================================================================== */
+
+:root {
+  /* ---------- Cor: base ---------- */
+  --bg-void: #121110;         /* sala de arquivo — fundo geral do site */
+  --bg-void-raised: #1a1815;  /* painéis sobre o fundo escuro */
+  --bg-paper: #ede6d3;        /* papel envelhecido — cards, fichas */
+  --bg-paper-dark: #ddd3b4;   /* papel em sombra / hover */
+  --bg-paper-hatch: #e2d9bf;  /* variação para textura/hachura */
+
+  --ink: #1c1a16;             /* tinta escura sobre papel */
+  --ink-soft: #3a352c;
+  --ink-faded: #6b6455;       /* texto secundário sobre papel */
+  --paper-on-void: #d8d2c1;   /* texto claro tipo "papel" sobre o void */
+  --paper-on-void-faded: #928b78;
+
+  --red-stamp: #a6332b;       /* carimbo CLASSIFIED */
+  --red-stamp-dark: #7c231d;
+  --red-stamp-bright: #c23c2f;
+
+  --line-hairline-void: rgba(216, 210, 193, 0.14);
+  --line-hairline-paper: rgba(28, 26, 22, 0.2);
+  --line-dashed-void: rgba(216, 210, 193, 0.28);
+
+  /* ---------- Cor: ressonâncias ---------- */
+  --res-colerica: #b23a2e;      /* vermelho — violência, instinto */
+  --res-colerica-bg: #2a1512;
+  --res-sanguinea: #c68a2e;     /* laranja/dourado — vício, êxtase */
+  --res-sanguinea-bg: #2a2011;
+  --res-melancolica: #3f4f7a;   /* azul petróleo/roxo escuro — perda, fim */
+  --res-melancolica-bg: #141a29;
+  --res-fleumatica: #616f57;    /* verde acinzentado — apatia, ausência */
+  --res-fleumatica-bg: #191d16;
+
+  /* ---------- Cor: classes de risco ---------- */
+  --classe-green: #4c7a52;
+  --classe-yellow: #c9a22e;
+  --classe-orange: #c1652e;
+  --classe-red: #a6332b;
+  --classe-black: #0d0c0b;
+  --classe-black-outline: #b23a2e;
+
+  /* ---------- Tipografia ---------- */
+  /* Display / carimbos / títulos institucionais — condensada, maiúscula */
+  --font-display: "Oswald", "Arial Narrow", sans-serif;
+  /* Dados de ficha, técnico, código — máquina de escrever */
+  --font-mono: "IBM Plex Mono", "Courier New", monospace;
+  /* Narrativa, descrições, lore — serifada, suporta cirílico */
+  --font-serif: "PT Serif", Georgia, serif;
+
+  --fs-000: 0.6875rem;  /* 11px — legendas, metadados */
+  --fs-00: 0.8125rem;   /* 13px — corpo pequeno */
+  --fs-0: 0.9375rem;    /* 15px — corpo padrão */
+  --fs-1: 1.125rem;     /* 18px */
+  --fs-2: 1.5rem;       /* 24px */
+  --fs-3: 2rem;         /* 32px */
+  --fs-4: 2.75rem;      /* 44px */
+  --fs-5: 4.25rem;      /* 68px — hero */
+
+  --lh-tight: 1.1;
+  --lh-normal: 1.5;
+  --lh-loose: 1.75;
+
+  --tracking-tight: -0.01em;
+  --tracking-normal: 0;
+  --tracking-wide: 0.04em;
+  --tracking-wider: 0.12em;
+  --tracking-widest: 0.24em;
+
+  /* ---------- Espaçamento ---------- */
+  --sp-1: 0.25rem;
+  --sp-2: 0.5rem;
+  --sp-3: 0.75rem;
+  --sp-4: 1rem;
+  --sp-5: 1.5rem;
+  --sp-6: 2rem;
+  --sp-7: 3rem;
+  --sp-8: 4.5rem;
+  --sp-9: 6.5rem;
+
+  /* ---------- Layout ---------- */
+  --content-max: 76rem;
+  --content-narrow: 44rem;
+  --radius-none: 0;
+  --radius-sm: 2px;
+
+  /* ---------- Sombra / elevação (sutil, sem glow moderno) ---------- */
+  --shadow-paper: 0 1px 0 rgba(0, 0, 0, 0.4), 0 12px 24px -12px rgba(0, 0, 0, 0.6);
+  --shadow-stamp: 0 0 0 1px rgba(166, 51, 43, 0.35);
+
+  /* ---------- Motion ---------- */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --dur-fast: 120ms;
+  --dur-normal: 240ms;
+  --dur-slow: 480ms;
+}

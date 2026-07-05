@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Índice de Anomalias — Enciclopédia Anomaliarum</title>
+  <meta name="description" content="Índice completo de anomalias classificadas, com busca por nome ou código e filtros por ressonância e classe de risco.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=PT+Serif:ital,wght@0,400;1,400;0,700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/components.css">
+</head>
+<body>
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+  <header class="site-header">
+    <div class="container site-header__bar">
+      <a href="index.html" class="site-header__brand">
+        <span class="case-no">ARQUIVO Nº 0001 —</span>
+        <strong>Enciclopédia&nbsp;Anomaliarum</strong>
+      </a>
+
+      <nav class="site-nav" aria-label="Navegação principal">
+        <a class="dossier-tab" href="index.html">Início</a>
+        <a class="dossier-tab" href="anomalias.html" aria-current="page">Anomalias</a>
+        <a class="dossier-tab" href="classificacoes.html">Classificações</a>
+        <a class="dossier-tab" href="sobre.html">Sobre</a>
+      </nav>
+
+      <form class="site-header__search" role="search" action="anomalias.html" method="get">
+        <label for="busca-global" class="visually-hidden">Buscar anomalia</label>
+        <span aria-hidden="true">⌕</span>
+        <input type="search" id="busca-global" name="q" placeholder="Buscar por nome, código…">
+      </form>
+    </div>
+  </header>
+
+  <main id="conteudo">
+    <section class="page-hero">
+      <div class="container">
+        <p class="page-hero__eyebrow">Consulta ao arquivo completo</p>
+        <h1 class="page-hero__title">Índice de anomalias</h1>
+        <p class="page-hero__lede">
+          Todas as entradas cadastradas neste arquivo, com busca por nome
+          ou código e filtros por ressonância e classe de risco.
+        </p>
+      </div>
+    </section>
+
+    <section class="section" style="border-bottom: none;">
+      <div class="container">
+
+        <form class="filtro-painel" id="form-filtros" role="search" aria-label="Busca e filtros de anomalias">
+          <div class="campo-busca-grande">
+            <span aria-hidden="true">⌕</span>
+            <label for="busca-indice" class="visually-hidden">Buscar por nome, código ou palavra-chave</label>
+            <input type="search" id="busca-indice" name="q" placeholder="Buscar por nome, código ou palavra-chave…" autocomplete="off">
+          </div>
+
+          <div class="filtro-linha">
+            <div class="filtro-grupo" role="group" aria-label="Filtrar por ressonância">
+              <span class="filtro-grupo__label">Ressonância</span>
+              <div class="filtro-grupo__opcoes" id="filtro-ressonancia">
+                <button type="button" class="chip-toggle" style="--chip-cor: var(--res-colerica);" data-ressonancia="colerica" aria-pressed="false">Colérica</button>
+                <button type="button" class="chip-toggle" style="--chip-cor: var(--res-sanguinea);" data-ressonancia="sanguinea" aria-pressed="false">Sanguínea</button>
+                <button type="button" class="chip-toggle" style="--chip-cor: var(--res-melancolica);" data-ressonancia="melancolica" aria-pressed="false">Melancólica</button>
+                <button type="button" class="chip-toggle" style="--chip-cor: var(--res-fleumatica);" data-ressonancia="fleumatica" aria-pressed="false">Fleumática</button>
+              </div>
+            </div>
+
+            <div class="filtro-grupo" role="group" aria-label="Filtrar por classe de risco">
+              <span class="filtro-grupo__label">Classe de risco</span>
+              <div class="filtro-grupo__opcoes" id="filtro-classe">
+                <button type="button" class="chip-toggle" style="--chip-cor: var(--classe-green);" data-classe="green" aria-pressed="false">Green</button>
+                <button type="button" class="chip-toggle" style="--chip-cor: var(--classe-yellow);" data-classe="yellow" aria-pressed="false">Yellow</button>
+                <button type="button" class="chip-toggle" style="--chip-cor: var(--classe-orange);" data-classe="orange" aria-pressed="false">Orange</button>
+                <button type="button" class="chip-toggle" style="--chip-cor: var(--classe-red);" data-classe="red" aria-pressed="false">Red</button>
+                <button type="button" class="chip-toggle" style="--chip-cor: var(--classe-black-outline);" data-classe="black" aria-pressed="false">Black</button>
+              </div>
+            </div>
+
+            <div class="filtro-grupo">
+              <label class="filtro-grupo__label" for="ordenacao">Ordenar por</label>
+              <select class="select-mono" id="ordenacao" name="ordenacao">
+                <option value="recentes">Mais recentes</option>
+                <option value="alfabetica">Ordem alfabética</option>
+                <option value="classe">Classe de risco</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="filtro-rodape">
+            <p class="resultado-contagem" id="resultado-contagem" aria-live="polite">Carregando arquivo…</p>
+            <button type="button" class="btn-limpar" id="btn-limpar-filtros">Limpar filtros</button>
+          </div>
+        </form>
+
+        <div class="grid-destaques" id="anomalias-grid" style="margin-top: var(--sp-6);" aria-live="polite">
+          <div class="estado-vazio">
+            <span class="estado-vazio__selo">Carregando</span>
+            <h3 class="estado-vazio__titulo">Consultando o arquivo…</h3>
+            <p class="estado-vazio__texto">Buscando os registros cadastrados.</p>
+          </div>
+        </div>
+
+        <noscript>
+          <p class="text-faded" style="margin-top: var(--sp-5);">
+            Este índice depende de JavaScript para carregar os registros.
+            Habilite o JavaScript do navegador para consultar as anomalias.
+          </p>
+        </noscript>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container site-footer__row">
+      <div class="barcode" aria-hidden="true">
+        <span></span><span></span><span></span><span></span><span></span>
+        <span></span><span></span><span></span><span></span><span></span>
+        <span></span><span></span><span></span><span></span><span></span>
+        <span></span><span></span><span></span><span></span><span></span>
+      </div>
+      <p class="site-footer__legal">
+        Enciclopédia Anomaliarum — arquivo fictício sem fins lucrativos.
+        Autoria de V. I. Volkov &amp; H. M. McMaster.
+      </p>
+      <p class="barcode__caption text-faded">Doc. 0004 / Ed. 2026</p>
+    </div>
+  </footer>
+
+  <script src="js/utils.js"></script>
+  <script src="js/data-loader.js"></script>
+  <script src="js/render-cards.js"></script>
+  <script src="js/search.js"></script>
+  <script src="js/main.js" defer></script>
+  <script>
+    (function () {
+      "use strict";
+
+      var Enciclopedia = window.Enciclopedia;
+      var grid = document.getElementById("anomalias-grid");
+      var contagemEl = document.getElementById("resultado-contagem");
+      var campoBusca = document.getElementById("busca-indice");
+      var selectOrdenacao = document.getElementById("ordenacao");
+      var btnLimpar = document.getElementById("btn-limpar-filtros");
+      var gruposChip = [
+        { container: document.getElementById("filtro-ressonancia"), atributo: "ressonancia" },
+        { container: document.getElementById("filtro-classe"), atributo: "classe" }
+      ];
+
+      var todasAnomalias = [];
+      var estado = {
+        texto: "",
+        ressonancias: new Set(),
+        classes: new Set(),
+        ordenacao: "recentes"
+      };
+
+      function lerParametrosUrl() {
+        var params = new URLSearchParams(window.location.search);
+        var q = params.get("q");
+        if (q) {
+          estado.texto = q;
+          campoBusca.value = q;
+        }
+        return params;
+      }
+
+      function atualizarContagem(qtdFiltrada, qtdTotal) {
+        if (qtdTotal === 0) {
+          contagemEl.innerHTML = "Nenhuma anomalia cadastrada no arquivo ainda.";
+          return;
+        }
+        contagemEl.innerHTML =
+          "<strong>" + qtdFiltrada + "</strong> de <strong>" + qtdTotal + "</strong> registro" +
+          (qtdTotal === 1 ? "" : "s") + " correspondem à busca atual.";
+      }
+
+      function renderizarLista() {
+        var resultado = Enciclopedia.search.aplicar(todasAnomalias, estado);
+        atualizarContagem(resultado.length, todasAnomalias.length);
+
+        if (resultado.length === 0) {
+          if (todasAnomalias.length === 0) {
+            Enciclopedia.renderCards.renderizarEstadoVazio(grid, {
+              titulo: "Nenhuma anomalia cadastrada ainda",
+              texto: "Este arquivo está sendo montado. Volte em breve — ou contribua com um novo registro (ver página Sobre)."
+            });
+          } else {
+            Enciclopedia.renderCards.renderizarEstadoVazio(grid, {
+              titulo: "Nenhum registro corresponde a esses filtros",
+              texto: "Tente remover algum filtro ou ajustar o termo de busca."
+            });
+          }
+          return;
+        }
+
+        Enciclopedia.renderCards.renderizar(resultado, grid);
+        return resultado;
+      }
+
+      function alternarChip(botao, colecao) {
+        var pressionado = botao.getAttribute("aria-pressed") === "true";
+        botao.setAttribute("aria-pressed", String(!pressionado));
+        var chave = botao.dataset.ressonancia || botao.dataset.classe;
+        if (pressionado) {
+          colecao.delete(chave);
+        } else {
+          colecao.add(chave);
+        }
+      }
+
+      function limparFiltros() {
+        estado.texto = "";
+        estado.ressonancias.clear();
+        estado.classes.clear();
+        estado.ordenacao = "recentes";
+        campoBusca.value = "";
+        selectOrdenacao.value = "recentes";
+        document.querySelectorAll(".chip-toggle").forEach(function (chip) {
+          chip.setAttribute("aria-pressed", "false");
+        });
+        renderizarLista();
+      }
+
+      function sortearAnomalia() {
+        if (todasAnomalias.length === 0) return;
+        var escolhida = todasAnomalias[Math.floor(Math.random() * todasAnomalias.length)];
+        limparFiltros();
+        requestAnimationFrame(function () {
+          var card = grid.querySelector('[data-slug="' + CSS.escape(escolhida.slug) + '"]');
+          if (!card) return;
+          card.scrollIntoView({ behavior: "smooth", block: "center" });
+          card.classList.add("card-anomalia--sorteada");
+          card.setAttribute("tabindex", "-1");
+          card.focus({ preventScroll: true });
+          setTimeout(function () {
+            card.classList.remove("card-anomalia--sorteada");
+          }, 2600);
+        });
+      }
+
+      function inicializarEventos() {
+        campoBusca.addEventListener(
+          "input",
+          Enciclopedia.utils.debounce(function () {
+            estado.texto = campoBusca.value;
+            renderizarLista();
+          }, 200)
+        );
+
+        selectOrdenacao.addEventListener("change", function () {
+          estado.ordenacao = selectOrdenacao.value;
+          renderizarLista();
+        });
+
+        gruposChip.forEach(function (grupo) {
+          if (!grupo.container) return;
+          grupo.container.addEventListener("click", function (evento) {
+            var botao = evento.target.closest(".chip-toggle");
+            if (!botao) return;
+            var colecao = grupo.atributo === "ressonancia" ? estado.ressonancias : estado.classes;
+            alternarChip(botao, colecao);
+            renderizarLista();
+          });
+        });
+
+        btnLimpar.addEventListener("click", limparFiltros);
+
+        document.getElementById("form-filtros").addEventListener("submit", function (evento) {
+          evento.preventDefault();
+        });
+      }
+
+      async function iniciar() {
+        var params = lerParametrosUrl();
+        inicializarEventos();
+
+        try {
+          todasAnomalias = await Enciclopedia.dataLoader.carregarTodas();
+        } catch (erro) {
+          Enciclopedia.renderCards.renderizarErro(grid, erro);
+          contagemEl.textContent = "Não foi possível carregar o arquivo.";
+          return;
+        }
+
+        renderizarLista();
+
+        if (params.get("aleatoria") === "1") {
+          sortearAnomalia();
+        }
+      }
+
+      iniciar();
+    })();
+  </script>
+</body>
+</html>

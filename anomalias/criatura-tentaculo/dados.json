@@ -1,0 +1,35 @@
+{
+  "id": "#0091",
+  "slug": "criatura-tentaculo",
+  "nome": "CARNÍFICE",
+  "titulo_anomalia": "O Que Se Ergue da Dor Coletiva",
+  "classe": "Orange",
+  "ressonancia": "Colerica",
+  "imagem": "foto.jpg",
+
+  "biografico": {
+    "nome_sujeito": "Não aplicável — entidade composta",
+    "idade": "Variável (formada no momento do evento de origem)",
+    "genero": "Não aplicável",
+    "descricao": "Entidade originada da agonia física acumulada de corpos mortos em circunstâncias violentas, geralmente próxima a distorções de realidade preexistentes. A anomalia se ergue do local da morte como uma massa de tecido escuro e membros filiformes. Cada tentáculo corresponde a uma vítima que contribuiu para sua formação: quanto maior o número de mortes na origem, maior e mais coordenada é a criatura; quanto menor esse número, mais o comportamento se aproxima do puramente animalesco e imprevisível. Registros de campo já documentaram espécimes com mais de trinta apêndices em zonas de conflito prolongado."
+  },
+
+  "fisico": {
+    "altura": "2,10m a 5,40m (proporcional ao nº de tentáculos)",
+    "peso": "Não mensurado com precisão — estrutura parcialmente não sólida",
+    "porte": "Massivo, irregular, assimétrico",
+    "tracos": "Tecido necrótico escurecido, ausência de rosto definido, tentáculos com terminações que lembram mãos ou bocas."
+  },
+
+  "atributos": {
+    "velocidade": 2,
+    "intelecto": 1,
+    "forca": 5,
+    "constituicao": 4
+  },
+
+  "notas": "Contenção recomendada apenas com uso de agentes que intensifiquem a dor associada à sua origem — álcool em chamas mostrou-se eficaz em três incidentes registrados, causando retração imediata da massa. Evitar contato direto com os tentáculos, mesmo os de menor porte. Não deve ser interpretada como hostil por padrão: em dois registros a entidade permaneceu inerte por semanas antes de qualquer estímulo de dor nas proximidades.",
+
+  "data_registro": "2025-11-03",
+  "status": "Ativo — sob observação"
+}

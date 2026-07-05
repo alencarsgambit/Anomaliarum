@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Enciclopédia Anomaliarum — Arquivo de Anomalias Classificadas</title>
+  <meta name="description" content="Arquivo confidencial de anomalias classificadas: criaturas e fenômenos que desafiam as leis da realidade, catalogados por ressonância e classe de risco.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=PT+Serif:ital,wght@0,400;1,400;0,700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/components.css">
+</head>
+<body>
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+  <header class="site-header">
+    <div class="container site-header__bar">
+      <a href="index.html" class="site-header__brand">
+        <span class="case-no">ARQUIVO Nº 0001 —</span>
+        <strong>Enciclopédia&nbsp;Anomaliarum</strong>
+      </a>
+
+      <nav class="site-nav" aria-label="Navegação principal">
+        <a class="dossier-tab" href="index.html" aria-current="page">Início</a>
+        <a class="dossier-tab" href="anomalias.html">Anomalias</a>
+        <a class="dossier-tab" href="classificacoes.html">Classificações</a>
+        <a class="dossier-tab" href="sobre.html">Sobre</a>
+      </nav>
+
+      <form class="site-header__search" role="search" action="anomalias.html" method="get">
+        <label for="busca-global" class="visually-hidden">Buscar anomalia</label>
+        <span aria-hidden="true">⌕</span>
+        <input type="search" id="busca-global" name="q" placeholder="Buscar por nome, código…">
+      </form>
+    </div>
+  </header>
+
+  <main id="conteudo">
+    <section class="hero">
+      <div class="hero__hex-field" aria-hidden="true"></div>
+      <div class="container">
+        <p class="hero__eyebrow">Propriedade de V. I. Volkov — acesso restrito</p>
+
+        <div class="hero__grid">
+          <div>
+            <p class="hero__title-ru">Энциклопедия Аномалиарум</p>
+            <h1 class="hero__title">Arquivo de <em>anomalias</em> classificadas</h1>
+            <p class="hero__lede">
+              Um catálogo de criaturas e fenômenos que desafiam, direta ou
+              indiretamente, as leis e ordens da realidade — organizados por
+              ressonância, classe de risco e histórico de contenção.
+            </p>
+            <div class="hero__actions">
+              <a class="btn btn--primary" href="anomalias.html">Consultar anomalias</a>
+              <a class="btn" href="classificacoes.html">Entender as classificações</a>
+            </div>
+          </div>
+
+          <div class="hero__stamp-wrap" aria-hidden="true">
+            <span class="stamp"><span class="stamp__grain"></span>Classified</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="destaques-titulo">
+      <div class="container">
+        <div class="section__header">
+          <div>
+            <p class="section__eyebrow">Registros recentes</p>
+            <h2 class="section__title" id="destaques-titulo">Últimas anomalias adicionadas</h2>
+          </div>
+          <a class="section__link" href="anomalias.html">Ver índice completo →</a>
+        </div>
+
+        <div class="grid-destaques" id="destaques-grid" aria-live="polite">
+          <div class="estado-vazio">
+            <span class="estado-vazio__selo">Carregando</span>
+            <h3 class="estado-vazio__titulo">Consultando o arquivo…</h3>
+            <p class="estado-vazio__texto">Buscando os registros mais recentes.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="painel-titulo">
+      <div class="container">
+        <h2 class="visually-hidden" id="painel-titulo">Painel de arquivo</h2>
+        <div class="grid-destaques" style="grid-template-columns: 1.1fr 1fr;">
+          <div class="panel-aleatoria">
+            <p class="section__eyebrow" style="color: var(--ink-faded);">Consulta rápida</p>
+            <h3 class="panel-aleatoria__title">Anomalia aleatória</h3>
+            <p class="panel-aleatoria__desc">
+              Abra um registro sorteado do arquivo — útil para revisar
+              fichas antigas ou descobrir entradas pouco consultadas.
+            </p>
+            <a class="btn" href="anomalias.html?aleatoria=1">Sortear registro</a>
+          </div>
+
+          <div class="panel-aviso">
+            <p class="panel-aviso__label">Avisos do arquivo</p>
+            <div class="panel-aviso__lista">
+              <div class="panel-aviso__item">
+                <span>Contribuições abertas — ver regras de submissão</span>
+                <span>Sobre →</span>
+              </div>
+              <div class="panel-aviso__item">
+                <span>Índice de anomalias em expansão contínua</span>
+                <span>02/2026</span>
+              </div>
+              <div class="panel-aviso__item">
+                <span>Revisar sistema de Ressonâncias antes de catalogar</span>
+                <span>Classificações →</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container site-footer__row">
+      <div class="barcode" aria-hidden="true">
+        <span></span><span></span><span></span><span></span><span></span>
+        <span></span><span></span><span></span><span></span><span></span>
+        <span></span><span></span><span></span><span></span><span></span>
+        <span></span><span></span><span></span><span></span><span></span>
+      </div>
+      <p class="site-footer__legal">
+        Enciclopédia Anomaliarum — arquivo fictício sem fins lucrativos.
+        Autoria de V. I. Volkov &amp; H. M. McMaster.
+      </p>
+      <p class="barcode__caption text-faded">Doc. 0001 / Ed. 2026</p>
+    </div>
+  </footer>
+
+  <script src="js/utils.js"></script>
+  <script src="js/data-loader.js"></script>
+  <script src="js/render-cards.js"></script>
+  <script src="js/search.js"></script>
+  <script src="js/main.js" defer></script>
+  <script>
+    (function () {
+      "use strict";
+      var Enciclopedia = window.Enciclopedia;
+      var grid = document.getElementById("destaques-grid");
+      var LIMITE = 3;
+
+      Enciclopedia.dataLoader.carregarTodas()
+        .then(function (lista) {
+          var recentes = Enciclopedia.search
+            .ordenar(lista, "recentes")
+            .slice(0, LIMITE);
+
+          if (recentes.length === 0) {
+            Enciclopedia.renderCards.renderizarEstadoVazio(grid, {
+              titulo: "Nenhuma anomalia cadastrada ainda",
+              texto: "Este arquivo está sendo montado. Volte em breve para ver os primeiros registros."
+            });
+            return;
+          }
+
+          Enciclopedia.renderCards.renderizar(recentes, grid);
+        })
+        .catch(function (erro) {
+          Enciclopedia.renderCards.renderizarErro(grid, erro);
+        });
+    })();
+  </script>
+</body>
+</html>

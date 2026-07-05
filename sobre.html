@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sobre — Enciclopédia Anomaliarum</title>
+  <meta name="description" content="O que é a Enciclopédia Anomaliarum, quem mantém o arquivo e como contribuir com o cadastro de novas anomalias.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=PT+Serif:ital,wght@0,400;1,400;0,700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/components.css">
+</head>
+<body>
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+  <header class="site-header">
+    <div class="container site-header__bar">
+      <a href="index.html" class="site-header__brand">
+        <span class="case-no">ARQUIVO Nº 0001 —</span>
+        <strong>Enciclopédia&nbsp;Anomaliarum</strong>
+      </a>
+
+      <nav class="site-nav" aria-label="Navegação principal">
+        <a class="dossier-tab" href="index.html">Início</a>
+        <a class="dossier-tab" href="anomalias.html">Anomalias</a>
+        <a class="dossier-tab" href="classificacoes.html">Classificações</a>
+        <a class="dossier-tab" href="sobre.html" aria-current="page">Sobre</a>
+      </nav>
+
+      <form class="site-header__search" role="search" action="anomalias.html" method="get">
+        <label for="busca-global" class="visually-hidden">Buscar anomalia</label>
+        <span aria-hidden="true">⌕</span>
+        <input type="search" id="busca-global" name="q" placeholder="Buscar por nome, código…">
+      </form>
+    </div>
+  </header>
+
+  <main id="conteudo">
+    <section class="page-hero">
+      <div class="container">
+        <p class="page-hero__eyebrow">Nota de rodapé do arquivista</p>
+        <h1 class="page-hero__title">Sobre este arquivo</h1>
+        <p class="page-hero__lede">
+          Por que este catálogo existe, quem assina os registros e como
+          alguém de fora consegue adicionar uma anomalia nova sem bagunçar
+          o arquivo.
+        </p>
+      </div>
+    </section>
+
+    <!-- ================= LORE ================= -->
+    <section class="section" aria-labelledby="lore-titulo">
+      <div class="container">
+        <div class="section__header">
+          <div>
+            <p class="section__eyebrow">01 — Origem do arquivo</p>
+            <h2 class="section__title" id="lore-titulo">Propriedade de V. I. Volkov</h2>
+          </div>
+        </div>
+
+        <div class="prose">
+          <p>
+            A <strong>Enciclopédia Anomaliarum</strong> começou como um
+            caderno de campo — depois um dossiê datilografado, depois uma
+            pilha de dossiês. Sua autoria é creditada a dois nomes que
+            aparecem repetidamente nas fichas mais antigas: <strong>V. I.
+            Volkov</strong>, responsável pelo registro e classificação inicial
+            das ocorrências, e <strong>H. M. McMaster</strong>, responsável
+            pela padronização do sistema de ressonâncias e classes que este
+            site usa até hoje.
+          </p>
+          <p>
+            Ninguém sabe ao certo quando o arquivo deixou de ser o caderno
+            de uma única pessoa e passou a ser mantido por um grupo
+            informal de colaboradores. O que se manteve foi o método: toda
+            anomalia registrada precisa de uma ficha completa, uma
+            ressonância definida e uma classe de risco — mesmo quando
+            grande parte do que se sabe sobre ela é incerteza.
+          </p>
+          <p>
+            <em>
+              Este site é um projeto de ficção colaborativa sem fins
+              lucrativos. Nenhuma das anomalias, pessoas ou instituições
+              descritas aqui existe fora deste arquivo.
+            </em>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= PROPÓSITO ================= -->
+    <section class="section" aria-labelledby="proposito-titulo">
+      <div class="container">
+        <div class="section__header">
+          <div>
+            <p class="section__eyebrow">02 — Para que serve</p>
+            <h2 class="section__title" id="proposito-titulo">O que este site tenta ser</h2>
+          </div>
+        </div>
+
+        <div class="prose">
+          <p>
+            Um catálogo de referência para as anomalias de um universo
+            ficcional — organizado como uma wiki de contenção, mas pensado
+            para ser lido tanto por quem já conhece a lore quanto por quem
+            está chegando agora pela primeira ficha que encontrou.
+          </p>
+          <ul>
+            <li>Cada anomalia tem uma ficha própria, com foto, atributos e histórico.</li>
+            <li>O sistema de Ressonâncias e Classes existe para dar consistência entre fichas escritas por pessoas diferentes.</li>
+            <li>O arquivo é estático e roda direto no GitHub Pages — qualquer pessoa com um editor de texto consegue contribuir.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= COMO CONTRIBUIR ================= -->
+    <section class="section" style="border-bottom: none;" aria-labelledby="contribuir-titulo">
+      <div class="container">
+        <div class="section__header">
+          <div>
+            <p class="section__eyebrow">03 — Regras de submissão</p>
+            <h2 class="section__title" id="contribuir-titulo">Como cadastrar uma nova anomalia</h2>
+          </div>
+        </div>
+
+        <div class="prose" style="margin-bottom: var(--sp-6);">
+          <p>
+            Todo o arquivo é feito de arquivos de texto simples — não existe
+            painel de administração. Adicionar uma anomalia nova é uma
+            questão de seguir a estrutura abaixo com cuidado.
+          </p>
+        </div>
+
+        <ol class="passo-lista">
+          <li class="passo-item">
+            <span class="passo-item__numero" aria-hidden="true"></span>
+            <div>
+              <h3 class="passo-item__titulo">Crie a subpasta da anomalia</h3>
+              <p class="passo-item__texto">
+                Dentro de <code>anomalias/</code>, crie uma pasta com um
+                slug curto e sem espaços — por exemplo,
+                <code>anomalias/siren-4265/</code>. O nome da pasta é o
+                identificador único da anomalia dentro do sistema.
+              </p>
+            </div>
+          </li>
+
+          <li class="passo-item">
+            <span class="passo-item__numero" aria-hidden="true"></span>
+            <div>
+              <h3 class="passo-item__titulo">Preencha o <code>dados.json</code></h3>
+              <p class="passo-item__texto">
+                Dentro da subpasta, crie um arquivo <code>dados.json</code>
+                com os campos de identificação, informações biográficas e
+                físicas, atributos (0 a 5), ressonância, classe e notas.
+                O schema completo está documentado no <code>ESTRUTURA.md</code>
+                do repositório.
+              </p>
+            </div>
+          </li>
+
+          <li class="passo-item">
+            <span class="passo-item__numero" aria-hidden="true"></span>
+            <div>
+              <h3 class="passo-item__titulo">Adicione no máximo uma imagem</h3>
+              <p class="passo-item__texto">
+                Coloque a foto ou arte oficial da anomalia na mesma
+                subpasta e aponte o nome exato do arquivo no campo
+                <code>"imagem"</code> do JSON. Sem imagem própria, o campo
+                pode ficar vazio — o site usa automaticamente o
+                <code>placeholder-anomalia.png</code> padrão.
+              </p>
+            </div>
+          </li>
+
+          <li class="passo-item">
+            <span class="passo-item__numero" aria-hidden="true"></span>
+            <div>
+              <h3 class="passo-item__titulo">Registre o slug no índice central</h3>
+              <p class="passo-item__texto">
+                Adicione o nome da nova pasta à lista em
+                <code>anomalias/index.json</code>. Sem esse passo, o site
+                não sabe que a pasta existe — o GitHub Pages não permite
+                listar diretórios dinamicamente.
+              </p>
+            </div>
+          </li>
+
+          <li class="passo-item">
+            <span class="passo-item__numero" aria-hidden="true"></span>
+            <div>
+              <h3 class="passo-item__titulo">Revise antes de enviar</h3>
+              <p class="passo-item__texto">
+                Confira se a ressonância escolhida corresponde às
+                palavras-chave descritas em
+                <a href="classificacoes.html" style="color: var(--red-stamp-bright);">Classificações</a>
+                e se a classe de risco reflete o quanto a anomalia
+                realmente ameaça quem a encontra.
+              </p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container site-footer__row">
+      <div class="barcode" aria-hidden="true">
+        <span></span><span></span><span></span><span></span><span></span>
+        <span></span><span></span><span></span><span></span><span></span>
+        <span></span><span></span><span></span><span></span><span></span>
+        <span></span><span></span><span></span><span></span><span></span>
+      </div>
+      <p class="site-footer__legal">
+        Enciclopédia Anomaliarum — arquivo fictício sem fins lucrativos.
+        Autoria de V. I. Volkov &amp; H. M. McMaster.
+      </p>
+      <p class="barcode__caption text-faded">Doc. 0003 / Ed. 2026</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js" defer></script>
+</body>
+</html>

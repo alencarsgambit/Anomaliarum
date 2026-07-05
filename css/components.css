@@ -1,0 +1,822 @@
+/* ==========================================================================
+   components.css — carimbos, selos, hexágonos, badges, barcode, cards
+   Enciclopédia Anomaliarum
+   ========================================================================== */
+
+/* ---------- Carimbo CLASSIFIED ---------- */
+.stamp {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-2);
+  padding: var(--sp-2) var(--sp-4);
+  border: 3px solid var(--red-stamp);
+  color: var(--red-stamp);
+  font-family: var(--font-display);
+  font-size: var(--fs-1);
+  font-weight: 600;
+  letter-spacing: var(--tracking-widest);
+  text-transform: uppercase;
+  transform: rotate(-4deg);
+  mix-blend-mode: multiply;
+  opacity: 0.9;
+  position: relative;
+  filter: saturate(1.1);
+}
+
+.stamp::before,
+.stamp::after {
+  content: "";
+  position: absolute;
+  border: 1px solid currentColor;
+  opacity: 0.5;
+}
+
+.stamp::before {
+  inset: 4px;
+}
+
+.stamp--sm {
+  font-size: var(--fs-000);
+  padding: var(--sp-1) var(--sp-3);
+  border-width: 2px;
+}
+
+/* Textura de tinta desgastada por cima do carimbo */
+.stamp__grain {
+  position: absolute;
+  inset: -6px;
+  pointer-events: none;
+  opacity: 0.5;
+  background-image:
+    radial-gradient(circle at 20% 30%, transparent 60%, rgba(0,0,0,0.4) 100%),
+    repeating-linear-gradient(115deg, rgba(0,0,0,0.05) 0 2px, transparent 2px 5px);
+}
+
+/* ---------- Selo de Ressonância ---------- */
+.badge-ressonancia {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-2);
+  padding: var(--sp-1) var(--sp-3);
+  font-family: var(--font-mono);
+  font-size: var(--fs-000);
+  letter-spacing: var(--tracking-wider);
+  text-transform: uppercase;
+  border: 1px solid currentColor;
+  border-radius: var(--radius-sm);
+}
+
+.badge-ressonancia::before {
+  content: "";
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: currentColor;
+  flex-shrink: 0;
+}
+
+.badge-ressonancia--colerica   { color: var(--res-colerica); }
+.badge-ressonancia--sanguinea  { color: var(--res-sanguinea); }
+.badge-ressonancia--melancolica{ color: var(--res-melancolica); }
+.badge-ressonancia--fleumatica { color: var(--res-fleumatica); }
+
+/* ---------- Selo de Classe de risco ---------- */
+.badge-classe {
+  display: inline-flex;
+  align-items: center;
+  padding: var(--sp-1) var(--sp-3);
+  font-family: var(--font-display);
+  font-size: var(--fs-000);
+  font-weight: 600;
+  letter-spacing: var(--tracking-wider);
+  text-transform: uppercase;
+  color: var(--bg-void);
+}
+
+.badge-classe--green  { background: var(--classe-green); }
+.badge-classe--yellow { background: var(--classe-yellow); }
+.badge-classe--orange { background: var(--classe-orange); }
+.badge-classe--red    { background: var(--classe-red); color: var(--paper-on-void); }
+.badge-classe--black  {
+  background: var(--classe-black);
+  color: var(--classe-black-outline);
+  border: 1px solid var(--classe-black-outline);
+}
+
+/* ---------- Hexágono de atributo ---------- */
+.hex {
+  --hex-size: 64px;
+  width: var(--hex-size);
+  height: calc(var(--hex-size) * 1.1547);
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  background: var(--bg-void-raised);
+  border: 1px solid var(--line-hairline-void);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 2px;
+  color: var(--paper-on-void);
+  font-family: var(--font-mono);
+}
+
+.hex__value {
+  font-size: var(--fs-2);
+  font-weight: 700;
+  line-height: 1;
+}
+
+.hex__label {
+  font-size: 0.55rem;
+  letter-spacing: var(--tracking-wider);
+  text-transform: uppercase;
+  color: var(--paper-on-void-faded);
+}
+
+/* Barra de atributo (alternativa linear ao hexágono, ex: 3/5) */
+.attr-bar {
+  display: grid;
+  grid-template-columns: 6.5rem 1fr auto;
+  align-items: center;
+  gap: var(--sp-3);
+  font-family: var(--font-mono);
+  font-size: var(--fs-00);
+}
+
+.attr-bar__label {
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wide);
+  color: var(--ink-faded);
+}
+
+.attr-bar__track {
+  display: flex;
+  gap: 3px;
+  height: 10px;
+}
+
+.attr-bar__seg {
+  flex: 1;
+  background: var(--line-hairline-paper);
+}
+
+.attr-bar__seg--filled {
+  background: var(--red-stamp);
+}
+
+.attr-bar__value {
+  color: var(--ink-faded);
+  font-variant-numeric: tabular-nums;
+}
+
+/* ---------- Barcode ---------- */
+.barcode {
+  display: flex;
+  align-items: flex-end;
+  gap: 2px;
+  height: 32px;
+}
+
+.barcode span {
+  display: block;
+  width: 2px;
+  background: currentColor;
+  height: 100%;
+}
+
+.barcode span:nth-child(3n)  { width: 3px; }
+.barcode span:nth-child(5n)  { height: 70%; }
+.barcode span:nth-child(7n)  { height: 85%; }
+.barcode span:nth-child(11n) { width: 1px; }
+
+.barcode__caption {
+  font-family: var(--font-mono);
+  font-size: var(--fs-000);
+  letter-spacing: var(--tracking-wide);
+}
+
+/* ---------- Card de anomalia ---------- */
+.card-anomalia {
+  background: var(--bg-paper);
+  color: var(--ink);
+  border: 1px solid var(--line-hairline-paper);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  isolation: isolate;
+  transition: transform var(--dur-normal) var(--ease-out);
+}
+
+.card-anomalia::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border: 1px dashed var(--line-hairline-paper);
+  margin: 6px;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.card-anomalia:hover,
+.card-anomalia:focus-visible {
+  transform: translateY(-3px);
+}
+
+.card-anomalia__media {
+  aspect-ratio: 4 / 3;
+  background: var(--bg-paper-hatch);
+  overflow: hidden;
+}
+
+.card-anomalia__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(0.5) contrast(1.05);
+}
+
+.card-anomalia__body {
+  padding: var(--sp-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+}
+
+.card-anomalia__id {
+  font-family: var(--font-mono);
+  font-size: var(--fs-000);
+  color: var(--ink-faded);
+  letter-spacing: var(--tracking-wide);
+}
+
+.card-anomalia__nome {
+  font-family: var(--font-display);
+  font-size: var(--fs-2);
+  letter-spacing: var(--tracking-tight);
+  text-transform: uppercase;
+}
+
+.card-anomalia__titulo {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: var(--fs-00);
+  color: var(--ink-faded);
+}
+
+.card-anomalia__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-2);
+  margin-top: var(--sp-2);
+}
+
+/* ---------- Hero secundário (páginas de conteúdo fixo) ---------- */
+.page-hero {
+  padding-block: var(--sp-7) var(--sp-6);
+  border-bottom: 1px solid var(--line-hairline-void);
+  position: relative;
+}
+
+.page-hero__eyebrow {
+  font-family: var(--font-mono);
+  font-size: var(--fs-000);
+  color: var(--paper-on-void-faded);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-widest);
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+  margin-bottom: var(--sp-4);
+}
+
+.page-hero__eyebrow::before {
+  content: "";
+  width: 2.5rem;
+  height: 1px;
+  background: var(--paper-on-void-faded);
+}
+
+.page-hero__title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 5vw, var(--fs-4));
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-tight);
+  max-width: 20ch;
+}
+
+.page-hero__lede {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: var(--fs-1);
+  color: var(--paper-on-void-faded);
+  max-width: 48ch;
+  margin-top: var(--sp-4);
+}
+
+/* ---------- Prosa (texto corrido em páginas de conteúdo) ---------- */
+.prose {
+  max-width: var(--content-narrow);
+  font-family: var(--font-serif);
+  font-size: var(--fs-1);
+  line-height: var(--lh-loose);
+  color: var(--paper-on-void);
+}
+
+.prose p + p {
+  margin-top: var(--sp-4);
+}
+
+.prose strong {
+  color: var(--red-stamp-bright);
+  font-weight: 700;
+}
+
+.prose em {
+  color: var(--paper-on-void-faded);
+}
+
+.prose h3 {
+  font-family: var(--font-display);
+  font-size: var(--fs-2);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-tight);
+  margin-top: var(--sp-7);
+  margin-bottom: var(--sp-3);
+  color: var(--paper-on-void);
+}
+
+.prose ul {
+  margin-top: var(--sp-3);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+}
+
+.prose li {
+  padding-left: var(--sp-5);
+  position: relative;
+}
+
+.prose li::before {
+  content: "—";
+  position: absolute;
+  left: 0;
+  color: var(--red-stamp);
+}
+
+/* ---------- Caixa de definição (ex: "O que é uma Anomalia") ---------- */
+.definicao-box {
+  background: var(--bg-paper);
+  color: var(--ink);
+  padding: var(--sp-6);
+  position: relative;
+  max-width: var(--content-narrow);
+}
+
+.definicao-box::before {
+  content: "";
+  position: absolute;
+  inset: 6px;
+  border: 1px dashed var(--line-hairline-paper);
+  pointer-events: none;
+}
+
+.definicao-box__termo {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-2);
+  font-family: var(--font-mono);
+  font-size: var(--fs-000);
+  letter-spacing: var(--tracking-widest);
+  text-transform: uppercase;
+  color: var(--red-stamp);
+  margin-bottom: var(--sp-3);
+}
+
+.definicao-box__texto {
+  font-family: var(--font-serif);
+  font-size: var(--fs-1);
+  line-height: var(--lh-loose);
+}
+
+.definicao-box__texto strong {
+  font-family: var(--font-display);
+  font-style: normal;
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wide);
+}
+
+/* ---------- Card de ressonância (página Classificações) ---------- */
+.card-ressonancia {
+  background: var(--bg-void-raised);
+  border: 1px solid var(--line-hairline-void);
+  border-top: 3px solid var(--res-cor, var(--red-stamp));
+  padding: var(--sp-5);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-4);
+}
+
+.card-ressonancia__nome {
+  font-family: var(--font-display);
+  font-size: var(--fs-2);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-tight);
+  color: var(--res-cor, var(--paper-on-void));
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+}
+
+.card-ressonancia__nome::before {
+  content: "";
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--res-cor, var(--paper-on-void));
+  flex-shrink: 0;
+}
+
+.card-ressonancia__nome-original {
+  font-family: var(--font-mono);
+  font-size: var(--fs-000);
+  color: var(--paper-on-void-faded);
+  letter-spacing: var(--tracking-wide);
+  text-transform: none;
+}
+
+.card-ressonancia__desc {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: var(--fs-00);
+  color: var(--paper-on-void-faded);
+}
+
+.chip-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-2);
+}
+
+.chip {
+  font-family: var(--font-mono);
+  font-size: var(--fs-000);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  padding: var(--sp-1) var(--sp-2);
+  border: 1px solid var(--line-hairline-void);
+  color: var(--paper-on-void-faded);
+}
+
+/* ---------- Exemplos fantásticos (referências de ficção por ressonância) ---------- */
+.card-ressonancia__exemplos {
+  margin-top: var(--sp-4);
+  padding-top: var(--sp-3);
+  border-top: 1px dashed var(--line-hairline-void);
+}
+
+.card-ressonancia__exemplos-label {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: var(--fs-000);
+  letter-spacing: var(--tracking-wider);
+  text-transform: uppercase;
+  color: var(--res-cor, var(--paper-on-void-faded));
+  margin-bottom: var(--sp-2);
+}
+
+.lista-exemplos {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: var(--sp-2);
+  row-gap: var(--sp-1);
+}
+
+.exemplo-fantastico {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: var(--fs-00);
+  color: var(--paper-on-void);
+}
+
+.exemplo-fantastico:not(:last-child)::after {
+  content: "•";
+  display: inline-block;
+  margin-left: var(--sp-2);
+  font-style: normal;
+  color: var(--line-hairline-void);
+}
+
+/* ---------- Tabela / legenda de classes de risco ---------- */
+.legenda-classes {
+  width: 100%;
+  max-width: var(--content-max);
+  border-collapse: collapse;
+}
+
+.legenda-classes th {
+  text-align: left;
+  font-family: var(--font-mono);
+  font-size: var(--fs-000);
+  letter-spacing: var(--tracking-wider);
+  text-transform: uppercase;
+  color: var(--paper-on-void-faded);
+  padding-block: var(--sp-3);
+  border-bottom: 1px solid var(--line-hairline-void);
+}
+
+.legenda-classes td {
+  padding-block: var(--sp-4);
+  border-bottom: 1px solid var(--line-hairline-void);
+  vertical-align: top;
+  font-family: var(--font-serif);
+  font-size: var(--fs-00);
+  color: var(--paper-on-void);
+}
+
+.legenda-classes td:first-child {
+  width: 8rem;
+}
+
+.legenda-classes__desc {
+  color: var(--paper-on-void-faded);
+}
+
+.legenda-classes__protocolo {
+  font-family: var(--font-mono);
+  font-size: var(--fs-000);
+  color: var(--paper-on-void-faded);
+  letter-spacing: var(--tracking-wide);
+}
+
+/* ---------- Lista de regras numeradas (Sobre / contribuição) ---------- */
+.passo-lista {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  max-width: var(--content-narrow);
+  counter-reset: passo;
+}
+
+.passo-item {
+  display: grid;
+  grid-template-columns: 3rem 1fr;
+  gap: var(--sp-4);
+  padding-block: var(--sp-5);
+  border-bottom: 1px dashed var(--line-hairline-void);
+}
+
+.passo-item:first-child {
+  padding-top: 0;
+}
+
+.passo-item:last-child {
+  border-bottom: none;
+}
+
+.passo-item__numero {
+  counter-increment: passo;
+  font-family: var(--font-display);
+  font-size: var(--fs-2);
+  color: var(--red-stamp);
+}
+
+.passo-item__numero::before {
+  content: counter(passo, decimal-leading-zero);
+}
+
+.passo-item__titulo {
+  font-family: var(--font-display);
+  font-size: var(--fs-1);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-tight);
+  margin-bottom: var(--sp-2);
+}
+
+.passo-item__texto {
+  font-family: var(--font-serif);
+  color: var(--paper-on-void-faded);
+  line-height: var(--lh-loose);
+}
+
+.passo-item__texto code {
+  font-family: var(--font-mono);
+  background: var(--bg-void);
+  padding: 0.1em 0.4em;
+  color: var(--paper-on-void);
+  font-size: 0.85em;
+}
+
+/* ---------- Painel de filtros (página Anomalias) ---------- */
+.filtro-painel {
+  background: var(--bg-void-raised);
+  border: 1px solid var(--line-hairline-void);
+  padding: var(--sp-5);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-5);
+}
+
+.campo-busca-grande {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+  border: 1px solid var(--line-hairline-void);
+  padding: var(--sp-3) var(--sp-4);
+  font-family: var(--font-mono);
+  font-size: var(--fs-1);
+  color: var(--paper-on-void-faded);
+}
+
+.campo-busca-grande input {
+  flex: 1;
+  color: var(--paper-on-void);
+}
+
+.campo-busca-grande input::placeholder {
+  color: var(--paper-on-void-faded);
+}
+
+.filtro-linha {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-6);
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.filtro-grupo {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+}
+
+.filtro-grupo__label {
+  font-family: var(--font-mono);
+  font-size: var(--fs-000);
+  letter-spacing: var(--tracking-wider);
+  text-transform: uppercase;
+  color: var(--paper-on-void-faded);
+}
+
+.filtro-grupo__opcoes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-2);
+}
+
+.chip-toggle {
+  font-family: var(--font-mono);
+  font-size: var(--fs-000);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  padding: var(--sp-2) var(--sp-3);
+  border: 1px solid var(--line-hairline-void);
+  color: var(--paper-on-void-faded);
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-2);
+  transition: color var(--dur-fast) var(--ease-out), border-color var(--dur-fast) var(--ease-out), background var(--dur-fast) var(--ease-out);
+}
+
+.chip-toggle::before {
+  content: "";
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--chip-cor, currentColor);
+  flex-shrink: 0;
+}
+
+.chip-toggle:hover,
+.chip-toggle:focus-visible {
+  color: var(--paper-on-void);
+  border-color: var(--paper-on-void-faded);
+}
+
+.chip-toggle[aria-pressed="true"] {
+  color: var(--bg-void);
+  background: var(--chip-cor, var(--paper-on-void));
+  border-color: var(--chip-cor, var(--paper-on-void));
+}
+
+.select-mono {
+  font-family: var(--font-mono);
+  font-size: var(--fs-000);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  color: var(--paper-on-void);
+  background: var(--bg-void);
+  border: 1px solid var(--line-hairline-void);
+  padding: var(--sp-2) var(--sp-3);
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0 L5 6 L10 0' fill='none' stroke='%23928b78' stroke-width='1.4'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right var(--sp-3) center;
+  padding-right: var(--sp-7);
+}
+
+.filtro-rodape {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--sp-4);
+  flex-wrap: wrap;
+  padding-top: var(--sp-4);
+  border-top: 1px dashed var(--line-hairline-void);
+}
+
+.btn-limpar {
+  font-family: var(--font-mono);
+  font-size: var(--fs-000);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  color: var(--paper-on-void-faded);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.btn-limpar:hover,
+.btn-limpar:focus-visible {
+  color: var(--red-stamp-bright);
+}
+
+.resultado-contagem {
+  font-family: var(--font-mono);
+  font-size: var(--fs-00);
+  color: var(--paper-on-void-faded);
+  letter-spacing: var(--tracking-wide);
+}
+
+.resultado-contagem strong {
+  color: var(--paper-on-void);
+}
+
+/* ---------- Estado vazio ---------- */
+.estado-vazio {
+  grid-column: 1 / -1;
+  border: 1px dashed var(--line-hairline-void);
+  padding: var(--sp-8) var(--sp-6);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--sp-2);
+}
+
+.estado-vazio__selo {
+  font-family: var(--font-mono);
+  font-size: var(--fs-000);
+  color: var(--red-stamp-bright);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wider);
+}
+
+.estado-vazio__titulo {
+  font-family: var(--font-display);
+  font-size: var(--fs-2);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-tight);
+}
+
+.estado-vazio__texto {
+  font-family: var(--font-serif);
+  color: var(--paper-on-void-faded);
+  max-width: 40ch;
+}
+
+.estado-vazio__texto code {
+  font-family: var(--font-mono);
+  background: var(--bg-void);
+  padding: 0.1em 0.4em;
+  font-size: 0.85em;
+}
+
+/* Destaque temporário do card sorteado (Consulta rápida / anomalia aleatória) */
+.card-anomalia--sorteada {
+  outline: 2px solid var(--red-stamp-bright);
+  outline-offset: 4px;
+}
+
+/* ---------- Aba de dossiê (usada na navegação) ---------- */
+.dossier-tab {
+  font-family: var(--font-mono);
+  font-size: var(--fs-000);
+  letter-spacing: var(--tracking-wider);
+  text-transform: uppercase;
+  color: var(--paper-on-void-faded);
+  padding: var(--sp-2) var(--sp-3);
+  border: 1px solid transparent;
+  border-bottom: none;
+  transition: color var(--dur-fast) var(--ease-out), border-color var(--dur-fast) var(--ease-out);
+}
+
+.dossier-tab:hover,
+.dossier-tab:focus-visible,
+.dossier-tab[aria-current="page"] {
+  color: var(--paper-on-void);
+  border-color: var(--line-hairline-void);
+}
+
+.dossier-tab[aria-current="page"] {
+  color: var(--red-stamp-bright);
+}
