@@ -2,30 +2,30 @@
   "id": "#0666",
   "slug": "abominacao",
   "nome": "ABOMINAÇÃO",
-  "titulo_anomalia": "O Colapso do Que É Real",
+  "titulo_anomalia": "O colapso da realidade",
   "classe": "Black",
   "ressonancia": "Fleumatica",
   "raridade": "Singular",
   "imagem": "foto.jpg",
   "biografico": {
-    "nome_sujeito": "Desconhecido — nenhum sujeito de origem identificado",
+    "nome_sujeito": "Desconhecido; nenhum sujeito de origem identificado",
     "idade": "Indeterminada",
     "genero": "Não aplicável",
-    "descricao": "Classificada entre as anomalias improváveis: registros confirmados são raríssimos e nenhum deles produziu documentação fotográfica utilizável. A entidade tem a capacidade de desfazer, de forma literal, qualquer coisa em que pense ou que veja diante de si — objetos, estruturas e, nos casos mais graves, os próprios conceitos que os sustentam. Observá-la diretamente é descrito por sobreviventes como uma sensação de finitude imediata; há registros de colapso mental completo em exposições de poucos segundos. Sua movimentação não segue padrão identificável, o que torna qualquer estratégia de rastreamento praticamente inútil."
+    "descricao": "Classificada entre as anomalias improváveis; o único registro confirmado não produziu documentação fotográfica utilizável. A entidade tem a capacidade de desfazer, de forma literal, qualquer coisa que pense e se vê diante de si. Observá-la diretamente é descrito como uma sensação de finitude imediata; há registro de cessamento de existência completo em uma exposição de poucos segundos; é uma sensação de finitude imediata e pode causar um colapso mental completo nos sobreviventes. Sua movimentação não segue padrão identificável, o que torna qualquer estratégia de rastreamento praticamente inútil. Aparenta estar ligada, de forma intrínseca, ao Clube dos 45."
   },
   "fisico": {
-    "altura": "Não determinada com precisão",
+    "altura": "Não determinada com precisão; entre 3 e 5 metros",
     "peso": "Não mensurável",
-    "porte": "Descrito de forma inconsistente entre testemunhas",
-    "tracos": "Nenhuma característica física relatada de forma consistente entre dois registros distintos."
+    "porte": "Descrito de forma inconsistente, mas aparenta ser massivo",
+    "tracos": "Personificação do horror humano"
   },
   "atributos": {
-    "velocidade": 1,
-    "intelecto": 5,
-    "forca": 1,
-    "constituicao": 2
+    "velocidade": 2,
+    "intelecto": ?,
+    "forca": ?,
+    "constituicao": ?
   },
-  "notas": "Único protocolo com alguma taxa de sucesso registrada é a negação ativa: agentes treinados relatam melhor índice de sobrevivência ao tratar a entidade como não real, evitando qualquer reconhecimento direto de sua presença. Não há garantia de eficácia. Classificação Black mantida até que uma contenção física ou conceitual viável seja desenvolvida.",
+  "notas": "Relata-se melhor índice de sobrevivência ao tratar a entidade como não real, evitando qualquer reconhecimento direto de sua presença. Não há garantia de eficácia. Classificação Black mantida até que uma contenção física ou conceitual viável seja desenvolvida.",
   "data_registro": "2026-02-14",
-  "status": "Não contido"
+  "status": "Desconhecido"
 }
