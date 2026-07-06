@@ -68,8 +68,10 @@ window.Enciclopedia.renderFicha = (function () {
     var atributosBrutos = anomalia.atributos || {};
     var chaveRes = utils.chaveRessonancia(anomalia.ressonancia);
     var chaveClasse = utils.chaveClasse(anomalia.classe);
+    var chaveRaridade = utils.chaveRaridade(anomalia.raridade);
     var labelRes = utils.labelRessonancia(anomalia.ressonancia);
     var labelClasse = utils.labelClasse(anomalia.classe);
+    var labelRaridade = utils.labelRaridade(anomalia.raridade);
     var imagem = anomalia._imagemResolvida || window.Enciclopedia.dataLoader.CAMINHO_PLACEHOLDER;
 
     var listaAtributos = ATRIBUTOS.map(function (a) {
@@ -101,6 +103,7 @@ window.Enciclopedia.renderFicha = (function () {
               '<div class="ficha-cracha__selos">' +
                 '<span class="badge-ressonancia badge-ressonancia--' + chaveRes + '">' + esc(labelRes) + '</span>' +
                 '<span class="badge-classe badge-classe--' + chaveClasse + '">' + esc(labelClasse) + '</span>' +
+                '<span class="badge-raridade badge-raridade--' + chaveRaridade + '">' + esc(labelRaridade) + '</span>' +
               '</div>' +
             '</div>' +
 

@@ -47,6 +47,10 @@
   --classe-black: #0d0c0b;
   --classe-black-outline: #b23a2e;
 
+  /* ---------- Cor: raridade ---------- */
+  --raridade-comum: #6b7280;      /* cinza — ocorrência frequente, catalogada */
+  --raridade-singular: #c9a22e;   /* dourado — registro único, sem precedentes */
+
   /* ---------- Tipografia ---------- */
   /* Display / carimbos / títulos institucionais — condensada, maiúscula */
   --font-display: "Oswald", "Arial Narrow", sans-serif;

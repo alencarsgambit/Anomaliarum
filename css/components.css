@@ -103,6 +103,37 @@
   border: 1px solid var(--classe-black-outline);
 }
 
+/* ---------- Selo de Raridade ---------- */
+.badge-raridade {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-1);
+  padding: var(--sp-1) var(--sp-3);
+  font-family: var(--font-mono);
+  font-size: var(--fs-000);
+  letter-spacing: var(--tracking-wider);
+  text-transform: uppercase;
+  border: 1px dashed currentColor;
+  border-radius: var(--radius-sm);
+  background: transparent;
+}
+
+.badge-raridade::before {
+  content: "◆";
+  font-size: 0.65em;
+  line-height: 1;
+}
+
+.badge-raridade--comum {
+  color: var(--raridade-comum);
+}
+
+.badge-raridade--singular {
+  color: var(--raridade-singular);
+  border-style: solid;
+  text-shadow: 0 0 6px rgba(201, 162, 46, 0.35);
+}
+
 /* ---------- Hexágono de atributo ---------- */
 .hex {
   --hex-size: 64px;
@@ -819,4 +850,25 @@
 
 .dossier-tab[aria-current="page"] {
   color: var(--red-stamp-bright);
+}
+
+/* ---------- Responsivo ---------- */
+@media (max-width: 40rem) {
+  .page-hero { padding-block: var(--sp-6) var(--sp-5); }
+  .page-hero__lede { max-width: none; }
+
+  .card-anomalia__nome { font-size: var(--fs-1); }
+  .card-anomalia__body { padding: var(--sp-3); }
+
+  .card-ressonancia { padding: var(--sp-4); }
+
+  .campo-busca-grande { padding: var(--sp-3); font-size: var(--fs-0); }
+
+  .filtro-grupo__opcoes { gap: var(--sp-2) var(--sp-2); }
+
+  .select-mono { width: 100%; }
+
+  .estado-vazio { padding: var(--sp-6) var(--sp-4); }
+
+  .lista-exemplos { column-gap: var(--sp-1); }
 }

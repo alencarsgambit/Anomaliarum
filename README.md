@@ -117,7 +117,8 @@ Páginas principais para conferir durante o desenvolvimento:
    `ESTRUTURA.md` — use um dos arquivos existentes (`anomalias/sem-olhos/dados.json`,
    por exemplo) como modelo. Campos obrigatórios: `id`, `slug` (igual ao
    nome da pasta), `nome`, `titulo_anomalia`, `classe`, `ressonancia`
-   (`Colerica`, `Sanguinea`, `Melancolica` ou `Fleumatica`), além dos
+   (`Colerica`, `Sanguinea`, `Melancolica` ou `Fleumatica`) e `raridade`
+   (`Comum` ou `Singular` — se omitido, o site assume `Comum`), além dos
    blocos `biografico`, `fisico` e `atributos` (cada atributo de 0 a 5).
 3. Adicione **no máximo uma imagem** na mesma subpasta (`jpg`, `png` ou
    `webp`) e aponte o nome exato do arquivo no campo `"imagem"` do JSON.

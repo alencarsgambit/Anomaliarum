@@ -302,12 +302,42 @@
 }
 
 @media (max-width: 40rem) {
+  .ficha-cracha__corpo {
+    padding: var(--sp-4);
+  }
+  .ficha-cracha__nome {
+    font-size: clamp(1.5rem, 8vw, 2.25rem);
+  }
+  .ficha-cracha__status {
+    align-items: flex-start;
+  }
+  .ficha-cracha .barcode {
+    display: none; /* evita espremer os dados de status em telas estreitas */
+  }
+  .ficha-painel {
+    padding: var(--sp-4);
+  }
   .ficha-atributos {
     justify-content: center;
-    gap: var(--sp-5);
+    gap: var(--sp-4);
+    padding: var(--sp-5) var(--sp-3);
+  }
+  .hex--grande {
+    --hex-size: 68px;
+  }
+  .hex--grande .hex__value {
+    font-size: var(--fs-2);
   }
   .ficha-campo {
     grid-template-columns: 1fr;
     gap: var(--sp-1);
+  }
+  .ficha-notas {
+    padding: var(--sp-4);
+  }
+  .ficha-breadcrumb {
+    padding-block: var(--sp-4);
+    overflow-x: auto;
+    white-space: nowrap;
   }
 }

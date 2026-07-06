@@ -258,12 +258,76 @@
       </div>
     </section>
 
+    <!-- ================= RARIDADE ================= -->
+    <section class="section" aria-labelledby="raridade-titulo">
+      <div class="container">
+        <div class="section__header">
+          <div>
+            <p class="section__eyebrow">03 — Frequência de ocorrência</p>
+            <h2 class="section__title" id="raridade-titulo">Raridade</h2>
+          </div>
+        </div>
+
+        <div class="prose" style="margin-bottom: var(--sp-6);">
+          <p>
+            Além da ressonância e da classe de risco, toda anomalia cadastrada
+            recebe uma marcação de raridade — o quão incomum é o próprio
+            registro dentro do arquivo. É uma medida de frequência e
+            precedente, não de perigo: uma anomalia Singular não é
+            necessariamente mais perigosa que uma Comum, apenas mais rara ou
+            mais difícil de enquadrar em um padrão já conhecido.
+          </p>
+        </div>
+
+        <div class="grid-destaques">
+          <article class="card-ressonancia" style="--res-cor: var(--raridade-comum);">
+            <div>
+              <h3 class="card-ressonancia__nome">
+                Comum
+                <span class="badge-raridade badge-raridade--comum" aria-hidden="true"></span>
+              </h3>
+              <p class="card-ressonancia__desc">
+                Anomalias com padrão de manifestação já documentado —
+                múltiplos casos semelhantes, comportamento previsível dentro
+                de sua categoria e procedimentos de contenção já
+                estabelecidos.
+              </p>
+            </div>
+            <ul class="chip-list">
+              <li class="chip">Padrão recorrente</li>
+              <li class="chip">Múltiplos registros</li>
+              <li class="chip">Procedimento conhecido</li>
+            </ul>
+          </article>
+
+          <article class="card-ressonancia" style="--res-cor: var(--raridade-singular);">
+            <div>
+              <h3 class="card-ressonancia__nome">
+                Singular
+                <span class="badge-raridade badge-raridade--singular" aria-hidden="true"></span>
+              </h3>
+              <p class="card-ressonancia__desc">
+                Anomalias sem precedente conhecido — um único registro,
+                origem e comportamento em grande parte imprevisíveis, sem
+                protocolo padronizado de contenção.
+              </p>
+            </div>
+            <ul class="chip-list">
+              <li class="chip">Registro único</li>
+              <li class="chip">Sem precedente</li>
+              <li class="chip">Protocolo experimental</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
     <!-- ================= CLASSES DE RISCO ================= -->
     <section class="section" style="border-bottom: none;" aria-labelledby="classes-titulo">
       <div class="container">
         <div class="section__header">
           <div>
-            <p class="section__eyebrow">03 — Escala de contenção</p>
+            <p class="section__eyebrow">04 — Escala de contenção</p>
             <h2 class="section__title" id="classes-titulo">Classes de risco</h2>
           </div>
         </div>

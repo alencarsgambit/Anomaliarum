@@ -32,6 +32,7 @@ window.Enciclopedia.search = (function () {
    * @param {string} estado.texto
    * @param {Set<string>} estado.ressonancias - chaves selecionadas (vazio = todas)
    * @param {Set<string>} estado.classes - chaves selecionadas (vazio = todas)
+   * @param {Set<string>} estado.raridades - chaves selecionadas (vazio = todas)
    * @param {string} estado.ordenacao - "recentes" | "alfabetica" | "classe"
    */
   function aplicar(lista, estado) {
@@ -45,7 +46,11 @@ window.Enciclopedia.search = (function () {
       var passaClasse =
         estado.classes.size === 0 ||
         estado.classes.has(utils.chaveClasse(anomalia.classe));
-      return passaTexto && passaRes && passaClasse;
+      var passaRaridade =
+        !estado.raridades ||
+        estado.raridades.size === 0 ||
+        estado.raridades.has(utils.chaveRaridade(anomalia.raridade));
+      return passaTexto && passaRes && passaClasse && passaRaridade;
     });
 
     return ordenar(filtrada, estado.ordenacao);

@@ -84,6 +84,14 @@
               </div>
             </div>
 
+            <div class="filtro-grupo" role="group" aria-label="Filtrar por raridade">
+              <span class="filtro-grupo__label">Raridade</span>
+              <div class="filtro-grupo__opcoes" id="filtro-raridade">
+                <button type="button" class="chip-toggle" style="--chip-cor: var(--raridade-comum);" data-raridade="comum" aria-pressed="false">Comum</button>
+                <button type="button" class="chip-toggle" style="--chip-cor: var(--raridade-singular);" data-raridade="singular" aria-pressed="false">Singular</button>
+              </div>
+            </div>
+
             <div class="filtro-grupo">
               <label class="filtro-grupo__label" for="ordenacao">Ordenar por</label>
               <select class="select-mono" id="ordenacao" name="ordenacao">
@@ -151,7 +159,8 @@
       var btnLimpar = document.getElementById("btn-limpar-filtros");
       var gruposChip = [
         { container: document.getElementById("filtro-ressonancia"), atributo: "ressonancia" },
-        { container: document.getElementById("filtro-classe"), atributo: "classe" }
+        { container: document.getElementById("filtro-classe"), atributo: "classe" },
+        { container: document.getElementById("filtro-raridade"), atributo: "raridade" }
       ];
 
       var todasAnomalias = [];
@@ -159,6 +168,7 @@
         texto: "",
         ressonancias: new Set(),
         classes: new Set(),
+        raridades: new Set(),
         ordenacao: "recentes"
       };
 
@@ -208,7 +218,7 @@
       function alternarChip(botao, colecao) {
         var pressionado = botao.getAttribute("aria-pressed") === "true";
         botao.setAttribute("aria-pressed", String(!pressionado));
-        var chave = botao.dataset.ressonancia || botao.dataset.classe;
+        var chave = botao.dataset.ressonancia || botao.dataset.classe || botao.dataset.raridade;
         if (pressionado) {
           colecao.delete(chave);
         } else {
@@ -220,6 +230,7 @@
         estado.texto = "";
         estado.ressonancias.clear();
         estado.classes.clear();
+        estado.raridades.clear();
         estado.ordenacao = "recentes";
         campoBusca.value = "";
         selectOrdenacao.value = "recentes";
@@ -265,7 +276,10 @@
           grupo.container.addEventListener("click", function (evento) {
             var botao = evento.target.closest(".chip-toggle");
             if (!botao) return;
-            var colecao = grupo.atributo === "ressonancia" ? estado.ressonancias : estado.classes;
+            var colecao =
+              grupo.atributo === "ressonancia" ? estado.ressonancias :
+              grupo.atributo === "classe" ? estado.classes :
+              estado.raridades;
             alternarChip(botao, colecao);
             renderizarLista();
           });

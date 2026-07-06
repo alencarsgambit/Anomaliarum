@@ -5,31 +5,27 @@
   "titulo_anomalia": "A Fome que Suga o Calor",
   "classe": "Yellow",
   "ressonancia": "Melancolica",
+  "raridade": "Comum",
   "imagem": "foto.jpg",
-
   "biografico": {
     "nome_sujeito": "Vinculado ao hospedeiro atual (identidade sob sigilo)",
     "idade": "Indeterminada — presença registrada há décadas",
     "genero": "Indeterminado",
     "descricao": "Presença imaterial que se manifesta primeiro como uma queda de temperatura no ambiente. Busca ativamente indivíduos com ideação suicida ou desejo declarado de oblívio, fixando-se neles como um parasita psíquico. Uma vez vinculada, a entidade acelera o definhamento físico e emocional do hospedeiro, alimentando-se da proximidade da morte sem, no entanto, desejar sua conclusão — o objetivo da anomalia é prolongar o estado de consumação, não encerrá-lo. A intervenção correta separa a entidade do hospedeiro sem eliminar nenhum dos dois; o hospedeiro pode ser resgatado."
   },
-
   "fisico": {
     "altura": "Variável — acompanha a silhueta do hospedeiro",
     "peso": "Sem massa mensurável",
     "porte": "Esguio, encurvado",
     "tracos": "Membros anormalmente alongados, boca que se abre além da capacidade humana normal, pele progressivamente pálida, perda de pelos corporais no hospedeiro."
   },
-
   "atributos": {
     "velocidade": 2,
     "intelecto": 2,
     "forca": 2,
     "constituicao": 3
   },
-
   "notas": "Prioridade de contenção invertida: o objetivo não é destruir a entidade, e sim impedir que ela permita a morte do hospedeiro, pois é esse estado limiar que a alimenta. Ambientes aquecidos artificialmente retardam o avanço dos sintomas, mas não interrompem o vínculo. Recomenda-se suporte psicológico contínuo ao hospedeiro durante todo o processo de separação.",
-
   "data_registro": "2025-08-22",
   "status": "Ativo — hospedeiro em acompanhamento"
 }

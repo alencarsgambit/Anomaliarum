@@ -56,6 +56,11 @@ window.Enciclopedia.utils = (function () {
     black: { label: "Black", ordem: 5 }
   };
 
+  var RARIDADES = {
+    comum: { label: "Comum", ordem: 1 },
+    singular: { label: "Singular", ordem: 2 }
+  };
+
   /** Aceita "Melancolica", "melancólica" etc. e devolve a chave interna ("melancolica"). */
   function chaveRessonancia(valor) {
     return normalizar(valor);
@@ -63,6 +68,12 @@ window.Enciclopedia.utils = (function () {
 
   function chaveClasse(valor) {
     return normalizar(valor);
+  }
+
+  function chaveRaridade(valor) {
+    var chave = normalizar(valor);
+    // "Comum" é o padrão quando o campo não foi preenchido no dados.json.
+    return chave || "comum";
   }
 
   function labelRessonancia(valor) {
@@ -73,6 +84,11 @@ window.Enciclopedia.utils = (function () {
   function labelClasse(valor) {
     var chave = chaveClasse(valor);
     return (CLASSES[chave] && CLASSES[chave].label) || valor || "—";
+  }
+
+  function labelRaridade(valor) {
+    var chave = chaveRaridade(valor);
+    return (RARIDADES[chave] && RARIDADES[chave].label) || valor || "Comum";
   }
 
   function ordemClasse(valor) {
@@ -93,10 +109,13 @@ window.Enciclopedia.utils = (function () {
     normalizar: normalizar,
     RESSONANCIAS: RESSONANCIAS,
     CLASSES: CLASSES,
+    RARIDADES: RARIDADES,
     chaveRessonancia: chaveRessonancia,
     chaveClasse: chaveClasse,
+    chaveRaridade: chaveRaridade,
     labelRessonancia: labelRessonancia,
     labelClasse: labelClasse,
+    labelRaridade: labelRaridade,
     ordemClasse: ordemClasse,
     formatarData: formatarData
   };
