@@ -21,9 +21,9 @@
   },
   "atributos": {
     "velocidade": 2,
-    "intelecto": ?,
-    "forca": ?,
-    "constituicao": ?
+    "intelecto": 1,
+    "forca": 3,
+    "constituicao": 5
   },
   "notas": "Relata-se melhor índice de sobrevivência ao tratar a entidade como não real, evitando qualquer reconhecimento direto de sua presença. Não há garantia de eficácia. Classificação Black mantida até que uma contenção física ou conceitual viável seja desenvolvida.",
   "data_registro": "2026-02-14",
